@@ -12,11 +12,19 @@
 	console.log(typeof arguments);
 })();
 
-// 将有名函数g赋值给变量f是不规范的，无法再通过g()调用该方法,会报错找不到g
-var f=function g(){
-	return 23;
-}
-console.log(typeof g());
+//2、 将有名函数g赋值给变量f是不规范的，无法再通过g()调用该方法,会报错找不到g
+// var f=function g(){
+// 	return 23;
+// }
+// console.log(typeof g());
+
+//3、delete只能删除对象的属性不能删除变量
+(function(x){
+	delete x;
+	console.log(x);
+	
+})(1);
+
 </script>
 
 
