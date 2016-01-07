@@ -52,13 +52,22 @@
 // })(fo.f1);
 
 // 7、
-var fo={
-	f1:function(){
-		return this.iNum
-	},
-	iNum:1
-};
-var a = typeof (f=fo.f1)();
+// var fo={
+// 	f1:function(){
+// 		return this.iNum
+// 	},
+// 	iNum:1
+// };
+// var a = typeof (f=fo.f1)();
+// console.log(a,typeof a);
+
+// 8、分组选择符的使用
+var f=(function f1(){
+	return '1';
+},function f2(){
+	return 2;
+})();
+var a= typeof f;
 console.log(a,typeof a);
 
 </script>
