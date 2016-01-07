@@ -26,8 +26,16 @@
 // })(1);
 
 // 4、
-var y=1,x=y=typeof x;
-console.log(x,typeof x);// 'undefined'
+// var y=1,x=y=typeof x;
+// console.log(x,typeof x);// 'undefined'
+
+// 5、
+(function(f){
+	var a = typeof f();
+	console.log(a,typeof a);
+})(function(){
+	return 1;
+});
 
 </script>
 
