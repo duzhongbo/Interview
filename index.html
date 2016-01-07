@@ -104,11 +104,19 @@
 
 // 13、instanceof用来判断某个对象是不是另一个对象的实例，
 // new f() instanceof f这种表达一般都是对的，但是假如构造函数返回的是自身，那么它的实例就是自身，自身不是自身的实例，所以返回错
-function f(){
-	return f;
+// function f(){
+// 	return f;
+// }
+// var a = (new f() instanceof f);
+// console.log(a);
+
+// 14、函数的长度就是形参的个数(arguments是实参的集合)
+with(function(arg1,arg2){
+	
+}){
+	console.log(length);// 2
 }
-var a = (new f() instanceof f);
-console.log(a);
+
 
 </script>
 
