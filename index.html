@@ -38,18 +38,28 @@
 // });
 
 // 6、
+// var fo={
+// 	f1:function(){
+// 		return this.iNum;
+// 	},
+// 	iNum:1
+// };
+// var b=typeof fo.f1();
+// console.log(b);
+// (function(){
+// 	var a = typeof arguments[0]();
+// 	console.log(a);
+// })(fo.f1);
+
+// 7、
 var fo={
 	f1:function(){
-		return this.iNum;
+		return this.iNum
 	},
 	iNum:1
 };
-var b=typeof fo.f1();
-console.log(b);
-(function(){
-	var a = typeof arguments[0]();
-	console.log(a);
-})(fo.f1);
+var a = typeof (f=fo.f1)();
+console.log(a,typeof a);
 
 </script>
 
