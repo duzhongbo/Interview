@@ -8,16 +8,22 @@
 
 <script type="text/javascript">
 // 1、函数的调用是到函数声明的地方去执行，并不是把声明的函数放到当前的上下文来执行
-var a=10;
-function f1(){
-	alert(a);
-}
-function f2(){
-	var a=20;
-	f1();
-}
-f2();//10
+// var a=10;
+// function f1(){
+// 	alert(a);
+// }
+// function f2(){
+// 	var a=20;
+// 	f1();
+// }
+// f2();//10
 
+// var关键字的应用
+function f1(){
+	var a = b = 1;
+}
+f1();
+console.log(typeof a,typeof b);// 'undefined','number'
 
 
 </script>
