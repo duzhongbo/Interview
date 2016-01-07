@@ -62,13 +62,20 @@
 // console.log(a,typeof a);
 
 // 8、分组选择符的使用
-var f=(function f1(){
-	return '1';
-},function f2(){
-	return 2;
-})();
-var a= typeof f;
-console.log(a,typeof a);
+// var f=(function f1(){
+// 	return '1';
+// },function f2(){
+// 	return 2;
+// })();
+// var a= typeof f;
+// console.log(a,typeof a);
+
+// 9、 不能在逻辑语句中声明函数，否在函数名无法在全局作用域被找到，但是仍然会返回真
+var x=1;
+if(function f(){}){
+	x+=typeof f;
+}
+console.log(x);// '1undefined'
 
 </script>
 
