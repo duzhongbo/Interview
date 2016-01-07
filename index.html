@@ -79,9 +79,18 @@
 
 
 // 10、连续使用typeof判断任何对象，结果必然都是string
-var x = [typeof x,typeof y][1];
-var a=typeof typeof x;
-console.log(a,typeof a);
+// var x = [typeof x,typeof y][1];
+// var a=typeof typeof x;
+// console.log(a,typeof a);
+
+// 11、
+(function(foo){
+	var a=typeof foo.bar;
+	console.log(a);
+})({foo:{bar:1}});
+
+
+
 </script>
 
 
