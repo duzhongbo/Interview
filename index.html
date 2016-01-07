@@ -8,9 +8,9 @@
 	
 <script type="text/javascript">
 //1、 arguments是实参集合，是类数组，属于object类型
-(function(){
-	console.log(typeof arguments);
-})();
+// (function(){
+// 	console.log(typeof arguments);
+// })();
 
 //2、 将有名函数g赋值给变量f是不规范的，无法再通过g()调用该方法,会报错找不到g
 // var f=function g(){
@@ -19,11 +19,15 @@
 // console.log(typeof g());
 
 //3、delete只能删除对象的属性不能删除变量
-(function(x){
-	delete x;
-	console.log(x);
+// (function(x){
+// 	delete x;
+// 	console.log(x);
 	
-})(1);
+// })(1);
+
+// 4、
+var y=1,x=y=typeof x;
+console.log(x,typeof x);// 'undefined'
 
 </script>
 
