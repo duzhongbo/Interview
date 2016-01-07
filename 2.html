@@ -43,17 +43,28 @@
 // console.log("hello world!2",a);
 
 // 5、连接符字符串转驼峰
-var str ='border-bottom-color';
-function f(str){
-	var arr = str.split('-');// [border,bottom,color]
-	for(var i=1,len=arr.length;i<len;i++){
-		arr[i] = arr[i].charAt(0).toUpperCase()+arr[i].substring(1);
-	}
-	return arr.join('');
-}
-var a = f(str);
-console.log(a);
+// var str ='border-bottom-color';
+// function f(str){
+// 	var arr = str.split('-');// [border,bottom,color]
+// 	for(var i=1,len=arr.length;i<len;i++){
+// 		arr[i] = arr[i].charAt(0).toUpperCase()+arr[i].substring(1);
+// 	}
+// 	return arr.join('');
+// }
+// var a = f(str);
+// console.log(a);
 
+// 5、连接符字符串转驼峰（正则）
+var str = 'border-bottom-color';
+function f(str){
+	var re = /-(\w)/g;
+	str=str.replace(re,function($0,$1){
+		return $1.toUpperCase();
+	});
+	return str;
+}
+var a=f(str);
+console.log(a);
 
 </script>
 
