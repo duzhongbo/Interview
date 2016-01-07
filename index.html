@@ -90,18 +90,25 @@
 // })({foo:{bar:1}});
 
 // 12、函数声明是预解析的,所以两个相同的函数声明，后者必然覆盖前者，不论何时调用
-(function(){
-	function f1(){
-		return 1;
-	}
-	var a = f1();
-	console.log(a);
-	return;
-	function f1(){
-		return 2;
-	}
-})();
+// (function(){
+// 	function f1(){
+// 		return 1;
+// 	}
+// 	var a = f1();
+// 	console.log(a);
+// 	return;
+// 	function f1(){
+// 		return 2;
+// 	}
+// })();
 
+// 13、instanceof用来判断某个对象是不是另一个对象的实例，
+// new f() instanceof f这种表达一般都是对的，但是假如构造函数返回的是自身，那么它的实例就是自身，自身不是自身的实例，所以返回错
+function f(){
+	return f;
+}
+var a = (new f() instanceof f);
+console.log(a);
 
 </script>
 
