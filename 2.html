@@ -58,8 +58,8 @@
 var str = 'border-bottom-color';
 function f(str){
 	var re = /-(\w)/g;
-	str=str.replace(re,function($0,$1){
-		return $1.toUpperCase();
+	str=str.replace(re,function(a,b){
+		return b.toUpperCase();
 	});
 	return str;
 }
