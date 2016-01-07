@@ -84,11 +84,23 @@
 // console.log(a,typeof a);
 
 // 11、
-(function(foo){
-	var a=typeof foo.bar;
-	console.log(a);
-})({foo:{bar:1}});
+// (function(foo){
+// 	var a=typeof foo.bar;
+// 	console.log(a);// 'undefined'
+// })({foo:{bar:1}});
 
+// 12、函数声明是预解析的,所以两个相同的函数声明，后者必然覆盖前者，不论何时调用
+(function(){
+	function f1(){
+		return 1;
+	}
+	var a = f1();
+	console.log(a);
+	return;
+	function f1(){
+		return 2;
+	}
+})();
 
 
 </script>
