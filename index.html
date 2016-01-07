@@ -71,12 +71,17 @@
 // console.log(a,typeof a);
 
 // 9、 不能在逻辑语句中声明函数，否在函数名无法在全局作用域被找到，但是仍然会返回真
-var x=1;
-if(function f(){}){
-	x+=typeof f;
-}
-console.log(x);// '1undefined'
+// var x=1;
+// if(function f(){}){
+// 	x+=typeof f;
+// }
+// console.log(x);// '1undefined'
 
+
+// 10、连续使用typeof判断任何对象，结果必然都是string
+var x = [typeof x,typeof y][1];
+var a=typeof typeof x;
+console.log(a,typeof a);
 </script>
 
 
