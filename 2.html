@@ -105,7 +105,7 @@
 
 // console.log(f(str));
 
-// 7、给数字加千分符
+// 8、给数字加千分符
 // var str='3562123761';
 // function f(str){
 // 	var num = str.length%3;
@@ -130,7 +130,7 @@
 // }
 // console.log(f(str));
 
-// 8、给数字加千分符（正则）
+// 9、给数字加千分符（正则）
 // var str = '562123761';
 
 // function f(str){
@@ -141,7 +141,7 @@
 
 // console.log(f(str));
 
-// 9、返回一个只包含数字类型的数组
+// 10、返回一个只包含数字类型的数组
 // var str = 'js123ldka78sdassdfd653';
 
 // function f(str){
@@ -159,15 +159,30 @@
 
 // console.log(f(str));
 
-// 9、返回一个只包含数字类型的数组（正则）
-var str = 'js123ldka78sdassdfd653';
+// 11、返回一个只包含数字类型的数组（正则）
+// var str = 'js123ldka78sdassdfd653';
 
+// function f(str){
+// 	var re = /\d+/g,arr=[];
+// 	str.replace(re,function($0,$1){
+// 		arr.push(parseInt($0));
+// 	});
+// 	return arr;
+// }
+// console.log(f(str));
+
+// 12、返回一个只包含数字类型的数组（正则2）
+var str = 'js123ldka78sdassdfd653';
 function f(str){
-	var re = /\d+/g,arr=[];
-	str.replace(re,function($0,$1){
-		arr.push(parseInt($0));
-	});
-	return arr;
+	var re=/[a-z]+/g;
+	str = str.replace(re,',');
+	str = str.split(',');
+	if(str[0]){
+		return str;
+	}else{
+		return str.slice(1);
+	}
+	
 }
 console.log(f(str));
 
