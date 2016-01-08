@@ -14,11 +14,22 @@
 // a = a-b;//2
 
 // 2、用第三个变量实现2个变量值换换
+// var a='hi';
+// var b='hello';
+// a=[a,b];
+// b=a[0];
+// a=a[1];
+// console.log(a,b);
+
+// 3、用第三个变量实现2个变量值换换（利用json）
 var a='hi';
 var b='hello';
-a=[a,b];
-b=a[0];
-a=a[1];
+a = {
+	a:a,
+	b:b
+};
+b=a.a;
+a=a.b;
 console.log(a,b);
 
 
