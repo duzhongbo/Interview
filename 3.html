@@ -7,13 +7,19 @@
 <body>
 	
 <script type="text/javascript">
-// 1、不用第三个变量实现2个变量值换换
-var a=1,b=2;
-a = a+b;//3
-b = a-b;//1
-a = a-b;//2
+// 1、不用第三个变量实现2个变量值换换（只适用于数字）
+// var a=1,b=2;
+// a = a+b;//3
+// b = a-b;//1
+// a = a-b;//2
 
-
+// 2、用第三个变量实现2个变量值换换
+var a='hi';
+var b='hello';
+a=[a,b];
+b=a[0];
+a=a[1];
+console.log(a,b);
 
 
 </script>
