@@ -77,9 +77,7 @@ function f(n){
 	arr.length = n+1;// 5个空值用某个字符链接，只需要4个，所以要加1
 	var str=arr.join('a');
 	str.replace(/a/g,function($0){
-		arr2.unshift(n);
-		n--;
-
+		arr2.unshift(n--);
 	});
 	return arr2;
 }
