@@ -42,18 +42,33 @@
 
 
 // 5、有一个数n=5,不使用for循环,怎样返回[1,2,3,4,5]这样一个数组
+// var a=5;
+// var b=[];
+
+// var t=setInterval(function(){
+// 	if(a>0){
+// 		b.unshift(a);
+// 	}else{
+// 		clearInterval(t);
+// 	}
+// 	a--;
+// },0);
+
+// 6、有一个数n=5,不使用for循环,怎样返回[1,2,3,4,5]这样一个数组：递归
 var a=5;
-var b=[];
+function f(a){
+	var arr=[];
+	return (function(){
+		arr.unshift(a);
+		a--;
+		if(a!=0){
+           arguments.callee();
+		}
+		return arr;
+	})();
+}
 
-var t=setInterval(function(){
-	if(a>0){
-		b.unshift(a);
-	}else{
-		clearInterval(t);
-	}
-	a--;
-},0);
-
+console.log(f(a));
 
 </script>
 
