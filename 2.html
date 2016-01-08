@@ -106,28 +106,39 @@
 // console.log(f(str));
 
 // 7、给数字加千分符
-var str='3562123761';
+// var str='3562123761';
+// function f(str){
+// 	var num = str.length%3;
+// 	var prev;
+// 	var arr=[];
+// 	var iNum = 0,temp='';
+// 	if(num!=0){
+// 		prev = str.substring(0,num);
+// 		arr.push(prev);
+// 	}
+// 	str = str.substring(num);
+// 	for(var i=0,len=str.length;i<len;i++){
+// 		iNum++;
+// 		temp+=str[i];
+// 		if(iNum==3 && temp!=''){
+// 			arr.push(temp);
+// 			iNum=0;
+// 			temp='';
+// 		}
+// 	}
+// 	return arr.join(',');
+// }
+// console.log(f(str));
+
+// 8、给数字加千分符（正则）
+var str = '3562123761';
+
 function f(str){
-	var num = str.length%3;
-	var prev;
-	var arr=[];
-	var iNum = 0,temp='';
-	if(num!=0){
-		prev = str.substring(0,num);
-		arr.push(prev);
-	}
-	str = str.substring(num);
-	for(var i=0,len=str.length;i<len;i++){
-		iNum++;
-		temp+=str[i];
-		if(iNum==3 && temp!=''){
-			arr.push(temp);
-			iNum=0;
-			temp='';
-		}
-	}
-	return arr.join(',');
+	var re = /(?=(\d{3})+$)/g;
+	str=str.replace(re,',');
+	return str;
 }
+
 console.log(f(str));
 
 
