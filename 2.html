@@ -55,16 +55,38 @@
 // console.log(a);
 
 // 5、连接符字符串转驼峰（正则）
-var str = 'border-bottom-color';
+// var str = 'border-bottom-color';
+// function f(str){
+// 	var re = /-(\w)/g;
+// 	str=str.replace(re,function(a,b){
+// 		return b.toUpperCase();
+// 	});
+// 	return str;
+// }
+// var a=f(str);
+// console.log(a);
+
+// 6、找到字符串中出现最多的字符和个数
+var str = 'skjksfssscfssdd';
 function f(str){
-	var re = /-(\w)/g;
-	str=str.replace(re,function(a,b){
-		return b.toUpperCase();
-	});
-	return str;
+	var obj={},key,val,len2=0;
+	for(var i=0,len=str.length;i<len;i++){
+		key=str[i];
+		if(!obj[key]){
+			obj[key]=[];
+		}
+		obj[key].push(key);
+	}
+	for(j in obj){
+		if(obj[j].length>len2){
+			len2 = obj[j].length;
+			val = j;
+		}
+	}
+	return '字符串中出现最多的是：'+val+'出现次数：'+len2;
 }
-var a=f(str);
-console.log(a);
+console.log(f(str));
+
 
 </script>
 
