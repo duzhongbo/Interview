@@ -22,15 +22,24 @@
 // console.log(a,b);
 
 // 3、用第三个变量实现2个变量值换换（利用json）
+// var a='hi';
+// var b='hello';
+// a = {
+// 	a:a,
+// 	b:b
+// };
+// b=a.a;
+// a=a.b;
+// console.log(a,b);
+
+// 4、用第三个变量实现2个变量值换换（利用字符串拼接和split方法）
 var a='hi';
 var b='hello';
-a = {
-	a:a,
-	b:b
-};
-b=a.a;
-a=a.b;
+a=a+b;
+b=a.split(b)[0];
+a=a.split(b)[1];
 console.log(a,b);
+
 
 
 </script>
