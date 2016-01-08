@@ -46,10 +46,9 @@ var a=5;
 var b=[];
 
 var t=setInterval(function(){
-	if(a>-1){
-		b.push(a);
+	if(a>0){
+		b.unshift(a);
 	}else{
-		b=b.sort().slice(1);
 		clearInterval(t);
 	}
 	a--;
