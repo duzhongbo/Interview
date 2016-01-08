@@ -33,13 +33,27 @@
 // console.log(a,b);
 
 // 4、不用第三个变量实现2个变量值换换（利用字符串拼接和split方法）
-var a='hi';
-var b='hello';
-a=a+b;
-b=a.split(b)[0];
-a=a.split(b)[1];
-console.log(a,b);
+// var a='hi';
+// var b='hello';
+// a=a+b;
+// b=a.split(b)[0];
+// a=a.split(b)[1];
+// console.log(a,b);
 
+
+// 5、有一个数n=5,不使用for循环,怎样返回[1,2,3,4,5]这样一个数组
+var a=5;
+var b=[];
+
+var t=setInterval(function(){
+	if(a>-1){
+		b.push(a);
+	}else{
+		b=b.sort().slice(1);
+		clearInterval(t);
+	}
+	a--;
+},0);
 
 
 </script>
