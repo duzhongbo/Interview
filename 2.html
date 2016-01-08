@@ -142,21 +142,33 @@
 // console.log(f(str));
 
 // 9、返回一个只包含数字类型的数组
+// var str = 'js123ldka78sdassdfd653';
+
+// function f(str){
+// 	var arr=[],temp='';
+// 	for(var i=0,len=str.length+1;i<len;i++){
+// 		if(parseInt(str[i])){
+// 			temp+=str[i];
+// 		}else if(temp){
+// 			arr.push(parseInt(temp));
+// 			temp='';
+// 		}
+// 	}
+// 	return arr;
+// }
+
+// console.log(f(str));
+
+// 9、返回一个只包含数字类型的数组（正则）
 var str = 'js123ldka78sdassdfd653';
 
 function f(str){
-	var arr=[],temp='';
-	for(var i=0,len=str.length+1;i<len;i++){
-		if(parseInt(str[i])){
-			temp+=str[i];
-		}else if(temp){
-			arr.push(parseInt(temp));
-			temp='';
-		}
-	}
+	var re = /\d+/g,arr=[];
+	str.replace(re,function($0,$1){
+		arr.push(parseInt($0));
+	});
 	return arr;
 }
-
 console.log(f(str));
 
 
