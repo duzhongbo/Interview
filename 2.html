@@ -131,10 +131,10 @@
 // console.log(f(str));
 
 // 8、给数字加千分符（正则）
-var str = '3562123761';
+var str = '562123761';
 
 function f(str){
-	var re = /(?=(\d{3})+$)/g;
+	var re = /(?=(?!\b)(\d{3})+$)/g;
 	str=str.replace(re,',');
 	return str;
 }
