@@ -131,12 +131,31 @@
 // console.log(f(str));
 
 // 8、给数字加千分符（正则）
-var str = '562123761';
+// var str = '562123761';
+
+// function f(str){
+// 	var re = /(?=(?!\b)(\d{3})+$)/g;
+// 	str=str.replace(re,',');
+// 	return str;
+// }
+
+// console.log(f(str));
+
+// 9、返回一个只包含数字类型的数组
+var str = 'js123ldka78sdassdfd653';
 
 function f(str){
-	var re = /(?=(?!\b)(\d{3})+$)/g;
-	str=str.replace(re,',');
-	return str;
+	var arr=[],temp='';
+	for(var i=0,len=str.length;i<len;i++){
+		if(parseInt(str[i])){
+			temp+=str[i];
+		}else if(temp){
+			arr.push(parseInt(temp));
+			temp='';
+		}
+	}
+	arr.push(parseInt(temp));
+	return arr;
 }
 
 console.log(f(str));
