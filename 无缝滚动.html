@@ -16,6 +16,7 @@
 	border: 1px #00f solid;
 	margin: 100px auto;
 	position: relative;
+	overflow: hidden;
 }
 ul{
 	list-style: none;
@@ -69,15 +70,21 @@ function getWidth(){
 getWidth();
 
 var iNum = 4; // 一次切换个数
-oBtn.onclick=function(){
+function next(){
 	for(var i=0;i<iNum;i++){
 		oUl.appendChild( aLi[i].cloneNode(true) ) ;
 	}
 	getWidth();
 	for(var j=0;j<iNum;j++){
 		oUl.removeChild(aLi[0]);
-	}
+	}	
 }
+oBtn.onclick=function(){
+	clearInterval(t);
+}
+var t=setInterval(function(){
+	next();
+},10);
 
 </script>
 
