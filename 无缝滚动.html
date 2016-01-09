@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>无缝滚动</title>
+</head>
+<body>
+	
+
+<style type="text/css">
+	
+
+.wrap{
+	width: 540px;
+	height: 100px;
+	border: 1px #00f solid;
+	margin: 100px auto;
+	position: relative;
+}
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+}
+li{float: left;margin-right: 10px;}
+.box{
+	width: 100px;
+	height: 100px;
+	background: #ccc;
+	font-size: 30px;
+	line-height: 100px;
+	text-align: center;
+}
+
+</style>
+
+<input type="button" value="切换" id="oBtn">
+
+<div class="wrap">
+	<ul id="oUl">
+		<li>
+			<div class="box">1</div>
+		</li>
+		<li>
+			<div class="box">2</div>
+		</li>
+		<li>
+			<div class="box">3</div>
+		</li>
+		<li>
+			<div class="box">4</div>
+		</li>
+		<li>
+			<div class="box">5</div>
+		</li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+
+
+function getWidth(){
+	var aLi = oUl.getElementsByTagName('li');
+	var iLen = aLi.length;
+	var oneWidth = aLi[0].offsetWidth + 10;
+	oUl.style.width = oneWidth * iLen + 'px';
+}
+getWidth();
+
+var iNum = 1; // 一次切换个数
+oBtn.onclick=function(){
+	var aLi = oUl.getElementsByTagName('li');
+	for(var i=0;i<iNum;i++){
+		oUl.appendChild( aLi[i].cloneNode(true) ) ;
+	}
+	getWidth();
+	for(var j=0;j<iNum;j++){
+		aLi = oUl.getElementsByTagName('li');
+		oUl.removeChild(aLi[0]);
+	}
+}
+
+</script>
+
+</body>
+</html>
