@@ -59,18 +59,17 @@ li{float: left;margin-right: 10px;}
 
 <script type="text/javascript">
 
+var aLi = oUl.getElementsByTagName('li');
 
 function getWidth(){
-	var aLi = oUl.getElementsByTagName('li');
 	var iLen = aLi.length;
 	var oneWidth = aLi[0].offsetWidth + 10;
 	oUl.style.width = oneWidth * iLen + 'px';
 }
 getWidth();
 
-var iNum = 1; // 一次切换个数
+var iNum = 4; // 一次切换个数
 oBtn.onclick=function(){
-	var aLi = oUl.getElementsByTagName('li');
 	for(var i=0;i<iNum;i++){
 		oUl.appendChild( aLi[i].cloneNode(true) ) ;
 	}
